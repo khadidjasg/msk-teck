@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body antialiased transition-colors duration-300;
+    @apply bg-paper-50 text-ink-900;
+  }
+
+  .dark body {
+    @apply bg-ink-950 text-paper-100;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Support RTL : quand dir="rtl" est sur <html>, on laisse Tailwind
+     gérer les logical properties (voir usage de ms-/me-/ps-/pe- dans les composants) */
+  [dir="rtl"] {
+    text-align: right;
+  }
+}
+
+@layer utilities {
+  .text-gradient-ember {
+    @apply bg-ember-gradient bg-clip-text text-transparent;
+  }
+}
