@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "Our Work",
+    "team": "Our Team",
+    "contact": "Contact",
+    "cta": "Join Us"
+  },
+  "theme": {
+    "toggleToLight": "Switch to light mode",
+    "toggleToDark": "Switch to dark mode"
+  },
+  "hero": {
+    "titleLine1": "Start Your",
+    "titleLine2": "Tech Journey",
+    "titlePrefix": "Learn to build",
+    "rotatingWords": [
+      "websites",
+      "mobile apps",
+      "AI products",
+      "your own MVP"
+    ],
+    "subtitle": "Whether you're a student, developer, or tech enthusiast, MSK TECH is here to help you learn, build, and grow.",
+    "steps": [
+      "Learn",
+      "Build",
+      "Launch",
+      "Succeed"
+    ],
+    "cta": "Join MSK TECH Today",
+    "tagline": "From Classroom to Career."
+  },
+  "whoAreWe": {
+    "title": "Who Are We?",
+    "description": "MSK TECH is a platform that helps students and future professionals learn technology through practical projects and real experience.",
+    "pillars": [
+      {
+        "title": "Learn",
+        "description": "Clear and practical explanations"
+      },
+      {
+        "title": "Practice",
+        "description": "Hands-on exercises and projects"
+      },
+      {
+        "title": "Build",
+        "description": "Real solutions for real problems"
+      }
+    ]
+  },
+  "whatWeTeach": {
+    "title": "What We Offer",
+    "subtitle": "to build your digital future.",
+    "next": "Next page",
+    "prev": "Previous page",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Master HTML, CSS, JavaScript and modern frameworks like React and Vue to create interactive, responsive websites."
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Learn to design and develop native and cross-platform apps with React Native and Flutter."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Create intuitive and aesthetic interfaces by mastering Figma, design principles and user experience."
+      },
+      {
+        "title": "Fullstack & MVP",
+        "description": "Become a full-stack developer capable of handling frontend, backend, databases and deployment."
+      },
+      {
+        "title": "AI & Machine Learning",
+        "description": "Dive into machine learning, deep learning and LLMs to build intelligent solutions."
+      },
+      {
+        "title": "Data Science & Analysis",
+        "description": "Analyze, visualize and interpret data to make informed decisions using Python and its libraries."
+      }
+    ]
+  },
+  "whatYouGain": {
+    "title": "What You'll Gain",
+    "items": [
+      "Practical and in-demand skills",
+      "Strong portfolio with real projects",
+      "Industry knowledge and experience",
+      "Problem-solving and critical thinking",
+      "Better career opportunities",
+      "Confidence to build your ideas"
+    ],
+    "quote": "The best way to predict your future is to build it."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "A question, an idea, a project in mind? Write to us — we reply within 24-48h.",
+    "availability": "Currently available for new projects",
+    "emailLabel": "Email us directly",
+    "email": "msk.tech2500@gmail.com",
+    "responseNote": "Guaranteed reply within 24-48 business hours",
+    "social": {
+      "instagram": "Follow us on Instagram",
+      "facebook": "Follow us on Facebook",
+      "follow": "Follow us on {{name}}"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone (optional)",
+      "subject": "Subject",
+      "message": "Your message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent! Thanks, we'll get back to you very soon.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Invalid email address."
+    }
+  },
+  "ourWork": {
+    "badge": "Our Work",
+    "heading": "Our Project Gallery",
+    "subtitle": "Examples of work we've delivered — browse and see for yourself.",
+    "categories": {
+      "all": "All",
+      "web": "Websites",
+      "mobile": "Apps",
+      "software": "Software",
+      "cyber": "Cybersecurity",
+      "design": "Design & Prototyping"
+    },
+    "viewDetails": "View details",
+    "backToProjects": "Back to projects",
+    "gallery": "Project gallery",
+    "techStack": "Technologies used"
+  },
+  "ourTeam": {
+    "badge": "Our Team",
+    "heading": "One Team, Many Expertises",
+    "description": "MSK TECH brings together a multidisciplinary team: modern web development, mobile apps, solid databases, and cybersecurity to protect every project from the first screen to the last line of code.",
+    "domains": [
+      {
+        "title": "Web Development",
+        "description": "Modern, fast, and responsive websites and web apps."
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Smooth, high-performing Android and iOS apps."
+      },
+      {
+        "title": "Databases & Backend",
+        "description": "Solid architectures — SQL, NoSQL — that scale with the project."
+      },
+      {
+        "title": "Cybersecurity",
+        "description": "Your data and users protected at every stage of development."
+      },
+      {
+        "title": "Design & Prototyping",
+        "description": "Clear, user-focused interfaces, from wireframe to interactive prototype."
+      },
+      {
+        "title": "AI & Data Science",
+        "description": "From raw data to models that support real decisions."
+      }
+    ],
+    "followTitle": "Want to see more?",
+    "followSubtitle": "Follow us on Instagram and Facebook.",
+    "ctaTitle": "Got a project in mind?",
+    "ctaSubtitle": "Get in touch — no obligation.",
+    "ctaButton": "Let's talk"
+  },
+  "footer": {
+    "tagline": "Learn. Build. Grow.",
+    "description": "MSK TECH helps students and future professionals learn tech through hands-on projects, from first steps to career.",
+    "linksTitle": "Navigation",
+    "contactTitle": "Contact",
+    "followTitle": "Follow Us",
+    "rights": "All rights reserved."
+  }
+}

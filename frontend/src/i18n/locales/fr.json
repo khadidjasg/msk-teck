@@ -1,0 +1,184 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "work": "Nos Réalisations",
+    "team": "Notre Équipe",
+    "contact": "Contact",
+    "cta": "Rejoignez-nous"
+  },
+  "theme": {
+    "toggleToLight": "Passer en mode clair",
+    "toggleToDark": "Passer en mode sombre"
+  },
+  "hero": {
+    "titleLine1": "Démarrez Votre",
+    "titleLine2": "Aventure Tech",
+    "titlePrefix": "Apprends à créer",
+    "rotatingWords": [
+      "des sites web",
+      "des applis mobiles",
+      "des produits IA",
+      "ton propre MVP"
+    ],
+    "subtitle": "Que vous soyez étudiant, développeur ou passionné de technologie, MSK TECH vous accompagne pour apprendre, construire et progresser.",
+    "steps": [
+      "Apprendre",
+      "Construire",
+      "Lancer",
+      "Réussir"
+    ],
+    "cta": "Rejoignez MSK TECH",
+    "tagline": "De la salle de classe à la carrière."
+  },
+  "whoAreWe": {
+    "title": "Qui Sommes-Nous ?",
+    "description": "MSK TECH est une plateforme qui aide les étudiants et futurs professionnels à apprendre la technologie à travers des projets pratiques et une expérience réelle.",
+    "pillars": [
+      {
+        "title": "Apprendre",
+        "description": "Des explications claires et concrètes"
+      },
+      {
+        "title": "Pratiquer",
+        "description": "Des exercices et projets pratiques"
+      },
+      {
+        "title": "Construire",
+        "description": "De vraies solutions à de vrais problèmes"
+      }
+    ]
+  },
+  "whatWeTeach": {
+    "title": "Ce Que Nous Proposons",
+    "subtitle": "pour construire votre avenir digital.",
+    "next": "Page suivante",
+    "prev": "Page précédente",
+    "items": [
+      {
+        "title": "Développement Web",
+        "description": "Maîtrisez HTML, CSS, JavaScript et les frameworks modernes comme React et Vue pour créer des sites web interactifs et responsifs."
+      },
+      {
+        "title": "Développement Mobile",
+        "description": "Apprenez à concevoir et développer des applications natives et cross-platform avec React Native et Flutter."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Créez des interfaces intuitives et esthétiques en maîtrisant Figma, les principes de design et l'expérience utilisateur."
+      },
+      {
+        "title": "Fullstack & MVP",
+        "description": "Devenez un développeur complet capable de gérer le frontend, le backend, les bases de données et le déploiement."
+      },
+      {
+        "title": "IA & Machine Learning",
+        "description": "Plongez dans le machine learning, le deep learning et les LLMs pour créer des solutions intelligentes."
+      },
+      {
+        "title": "Data Science & Analyse",
+        "description": "Analysez, visualisez et interprétez les données pour prendre des décisions éclairées grâce à Python et ses librairies."
+      }
+    ]
+  },
+  "whatYouGain": {
+    "title": "Ce Que Vous Allez Gagner",
+    "items": [
+      "Des compétences pratiques et recherchées",
+      "Un portfolio solide avec de vrais projets",
+      "Une connaissance et une expérience du secteur",
+      "La résolution de problèmes et l'esprit critique",
+      "De meilleures opportunités de carrière",
+      "La confiance pour construire vos idées"
+    ],
+    "quote": "La meilleure façon de prédire votre avenir est de le construire."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question, une idée, un projet en tête ? Écrivez-nous — on vous répond sous 24 à 48h.",
+    "availability": "Actuellement disponibles pour de nouveaux projets",
+    "emailLabel": "Écrivez-nous directement",
+    "email": "msk.tech2500@gmail.com",
+    "responseNote": "Réponse garantie sous 24-48h ouvrées",
+    "social": {
+      "instagram": "Suivez-nous sur Instagram",
+      "facebook": "Suivez-nous sur Facebook",
+      "follow": "Suivez-nous sur {{name}}"
+    },
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "phone": "Téléphone (optionnel)",
+      "subject": "Sujet",
+      "message": "Votre message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "success": "Message envoyé ! Merci, on revient vers vous très vite.",
+      "error": "Une erreur est survenue. Réessayez ou écrivez-nous directement par email."
+    },
+    "errors": {
+      "required": "Ce champ est requis.",
+      "email": "Adresse email invalide."
+    }
+  },
+  "ourWork": {
+    "badge": "Nos Réalisations",
+    "heading": "Galerie de nos projets",
+    "subtitle": "Des exemples de travaux réalisés — parcourez et jugez par vous-même.",
+    "categories": {
+      "all": "Tout",
+      "web": "Sites web",
+      "mobile": "Applications",
+      "software": "Logiciels",
+      "cyber": "Cybersécurité",
+      "design": "Design & Prototypage"
+    },
+    "viewDetails": "Voir les détails",
+    "backToProjects": "Retour aux projets",
+    "gallery": "Galerie du projet",
+    "techStack": "Technologies utilisées"
+  },
+  "ourTeam": {
+    "badge": "Notre Équipe",
+    "heading": "Une Équipe, Plusieurs Expertises",
+    "description": "MSK TECH réunit une équipe pluridisciplinaire : développement web au design moderne, applications mobiles, bases de données robustes, et sécurité informatique pour protéger chaque projet du premier écran jusqu'à la dernière ligne de code.",
+    "domains": [
+      {
+        "title": "Développement Web",
+        "description": "Des sites et applications web modernes, rapides et responsive."
+      },
+      {
+        "title": "Développement Mobile",
+        "description": "Des applications Android et iOS fluides et performantes."
+      },
+      {
+        "title": "Bases de Données & Backend",
+        "description": "Des architectures solides — SQL, NoSQL — qui tiennent la charge et grandissent avec le projet."
+      },
+      {
+        "title": "Cybersécurité",
+        "description": "Vos données et vos utilisateurs protégés, à chaque étape du développement."
+      },
+      {
+        "title": "Design & Prototypage",
+        "description": "Des interfaces claires, pensées pour l'utilisateur, du wireframe au prototype interactif."
+      },
+      {
+        "title": "IA & Data Science",
+        "description": "De la donnée brute aux modèles qui appuient de vraies décisions."
+      }
+    ],
+    "followTitle": "Envie d'en voir plus ?",
+    "followSubtitle": "Suivez-nous sur Instagram et Facebook.",
+    "ctaTitle": "Un projet en tête ?",
+    "ctaSubtitle": "Contactez-nous — sans engagement.",
+    "ctaButton": "Parlons-en"
+  },
+  "footer": {
+    "tagline": "Apprendre. Construire. Grandir.",
+    "description": "MSK TECH accompagne étudiants et futurs professionnels dans l'apprentissage concret de la tech, du premier projet jusqu'à la carrière.",
+    "linksTitle": "Navigation",
+    "contactTitle": "Contact",
+    "followTitle": "Suivez-nous",
+    "rights": "Tous droits réservés."
+  }
+}
