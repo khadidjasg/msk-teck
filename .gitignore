@@ -1,16 +1,34 @@
-# Node / Frontend
+# Dependencies
 node_modules/
-frontend/dist/
-frontend/.env
+**/node_modules/
 
-# Python / Backend
-backend/venv/
-backend/__pycache__/
-backend/**/__pycache__/
-backend/*.pyc
+# Build outputs
+dist/
+build/
+frontend/dist/
+
+# Environment variables — NE JAMAIS committer de vraies clés
+.env
+.env.local
+.env.*.local
+frontend/.env
 backend/.env
 
-# OS / Editor
-.DS_Store
+# Python (backend)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+backend/venv/
+backend/__pycache__/
+
+# Editor / OS
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Vite
+.vite/
