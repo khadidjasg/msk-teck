@@ -198,7 +198,7 @@ export default function Hero() {
 
                 <motion.div
                     variants={itemVariants}
-                    className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[400px] xl:h-[560px] shrink-0"
+                    className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[400px] xl:h-[560px] shrink-0"
                 >
                     <HeroModel3D />
                 </motion.div>

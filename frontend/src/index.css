@@ -22,8 +22,6 @@
     @apply font-display;
   }
 
-  /* Support RTL : quand dir="rtl" est sur <html>, on laisse Tailwind
-     gérer les logical properties (voir usage de ms-/me-/ps-/pe- dans les composants) */
   [dir="rtl"] {
     text-align: right;
   }
@@ -33,4 +31,19 @@
   .text-gradient-ember {
     @apply bg-ember-gradient bg-clip-text text-transparent;
   }
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+        margin-left: 0%;
+    }
+    50% {
+        width: 100%;
+        margin-left: 0%;
+    }
+    100% {
+        width: 0%;
+        margin-left: 100%;
+    }
 }
