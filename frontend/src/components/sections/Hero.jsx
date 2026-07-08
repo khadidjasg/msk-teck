@@ -159,10 +159,12 @@ export default function Hero() {
                 <div className="flex flex-col items-start gap-4 lg:gap-6 w-full">
                     <motion.h1
                         variants={itemVariants}
-                        className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] lg:leading-[1.08] max-w-3xl"
+                        className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] lg:leading-[1.08]"
                     >
-                        <span className="block text-ink-900 dark:text-paper-50">
-                            {t('hero.titlePrefix')}{' '}
+                        <span className="block text-ink-900 dark:text-paper-50 whitespace-nowrap">
+                            {t('hero.titlePrefix')}
+                        </span>
+                        <span className="block text-ink-900 dark:text-paper-50 mt-1">
                             <RewireWord words={rotatingWords} />
                         </span>
                     </motion.h1>
@@ -178,7 +180,11 @@ export default function Hero() {
                         <CTA to="/contact">{t('hero.cta')}</CTA>
                     </motion.div>
 
-                    <motion.ol variants={itemVariants} className="flex flex-nowrap items-center gap-1.5 sm:gap-3 pt-3 lg:pt-4 font-display text-[11px] sm:text-xs lg:text-sm overflow-x-auto pb-1 w-full">
+                    <motion.ol
+                        variants={itemVariants}
+                        className="flex flex-nowrap items-center gap-1.5 sm:gap-3 pt-3 lg:pt-4 font-display text-[11px] sm:text-xs lg:text-sm overflow-x-auto pb-1 w-full [-ms-overflow-style:none] [scrollbar-width:none]"
+                        style={{ WebkitOverflowScrolling: 'touch' }}
+                    >
                         {steps.map((step, i) => (
                             <li key={step} className="flex items-center gap-2 sm:gap-3 shrink-0">
                                 {i > 0 && <span className="w-3 sm:w-4 lg:w-6 h-px bg-ember-500/40 shrink-0" aria-hidden="true" />}
@@ -198,7 +204,7 @@ export default function Hero() {
 
                 <motion.div
                     variants={itemVariants}
-                    className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[400px] xl:h-[560px] shrink-0"
+                    className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[400px] xl:h-[560px] shrink-0"
                 >
                     <HeroModel3D />
                 </motion.div>
