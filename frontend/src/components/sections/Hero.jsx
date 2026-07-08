@@ -130,7 +130,7 @@ export default function Hero() {
             ref={sectionRef}
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
-            className="relative overflow-hidden min-h-[92vh] flex items-center"
+            className="relative overflow-hidden min-h-[auto] lg:min-h-[92vh] flex items-center"
         >
 
             <HeroBackground3D />
@@ -153,13 +153,13 @@ export default function Hero() {
                 variants={containerVariants}
                 initial="hidden"
                 animate="show"
-                style={{ opacity: contentOpacity, y: contentY }}className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 w-full grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center"
-
+                style={{ opacity: contentOpacity, y: contentY }}
+                className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 w-full flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8 items-center py-10 lg:py-0"
             >
-                <div className="flex flex-col items-start gap-6">
+                <div className="flex flex-col items-start gap-4 lg:gap-6 w-full">
                     <motion.h1
                         variants={itemVariants}
-                        className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-3xl"
+                        className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] lg:leading-[1.08] max-w-3xl"
                     >
                         <span className="block text-ink-900 dark:text-paper-50">
                             {t('hero.titlePrefix')}{' '}
@@ -169,19 +169,19 @@ export default function Hero() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-base sm:text-lg max-w-xl text-ink-800/80 dark:text-paper-100/75"
+                        className="text-sm sm:text-base lg:text-lg max-w-xl text-ink-800/80 dark:text-paper-100/75"
                     >
                         {t('hero.subtitle')}
                     </motion.p>
 
-                    <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
+                    <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 lg:gap-4 pt-1 lg:pt-2">
                         <CTA to="/contact">{t('hero.cta')}</CTA>
                     </motion.div>
 
-                    <motion.ol variants={itemVariants} className="flex flex-nowrap items-center gap-1.5 sm:gap-3 pt-4 font-display text-[11px] sm:text-sm overflow-x-auto pb-1">
+                    <motion.ol variants={itemVariants} className="flex flex-nowrap items-center gap-1.5 sm:gap-3 pt-3 lg:pt-4 font-display text-[11px] sm:text-xs lg:text-sm overflow-x-auto pb-1 w-full">
                         {steps.map((step, i) => (
-                            <li key={step} className="flex items-center gap-2 sm:gap-3">
-                                {i > 0 && <span className="w-4 sm:w-6 h-px bg-ember-500/40" aria-hidden="true" />}
+                            <li key={step} className="flex items-center gap-2 sm:gap-3 shrink-0">
+                                {i > 0 && <span className="w-3 sm:w-4 lg:w-6 h-px bg-ember-500/40 shrink-0" aria-hidden="true" />}
                                 <motion.span
                                     initial={{ opacity: 0, scale: 0.7 }}
                                     animate={{ opacity: 1, scale: 1 }}
@@ -198,7 +198,7 @@ export default function Hero() {
 
                 <motion.div
                     variants={itemVariants}
-                    className="relative w-full h-[280px] sm:h-[360px] lg:h-[560px]"
+                    className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[400px] xl:h-[560px] shrink-0"
                 >
                     <HeroModel3D />
                 </motion.div>

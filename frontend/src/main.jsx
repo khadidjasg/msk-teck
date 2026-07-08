@@ -6,12 +6,18 @@ import './i18n/i18n.js'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import App from './App.jsx'
 
+const originalWarn = console.warn
+console.warn = (...args) => {
+    if (typeof args[0] === 'string' && args[0].includes('THREE.Clock')) return
+    originalWarn.apply(console, args)
+}
+
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
-  </StrictMode>,
+    <StrictMode>
+        <ThemeProvider>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </ThemeProvider>
+    </StrictMode>,
 )
