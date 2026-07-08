@@ -22,7 +22,7 @@ export const socialLinks = [
     },
     {
         name: 'Email',
-        url: 'msk.tech2500@gmail.com',
+        url: 'mailto:msk.tech2500@gmail.com',
         icon: Mail,
         hoverBg: 'linear-gradient(90deg, #FF9142 0%, #E63312 100%)',
     },

@@ -8,37 +8,58 @@ import HeroModel3D from './HeroModel3D.jsx'
 
 function RewireWord({ words, interval = 2600 }) {
     const [index, setIndex] = useState(0)
+    const { i18n } = useTranslation()
+    const isRTL = i18n.language === 'ar'
 
     useEffect(() => {
         const id = setInterval(() => setIndex((i) => (i + 1) % words.length), interval)
         return () => clearInterval(id)
     }, [words.length, interval])
 
+    if (isRTL) {
+        return (
+            <span className="relative inline text-gradient-ember" dir="rtl">
+                <AnimatePresence mode="wait">
+                    <motion.span
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+                        className="inline-block"
+                    >
+                        {words[index]}
+                    </motion.span>
+                </AnimatePresence>
+            </span>
+        )
+    }
+
     const letters = words[index].split('')
 
     return (
-        <span className="relative inline-flex flex-wrap text-gradient-ember">
-      <AnimatePresence mode="wait">
-        <motion.span key={index} className="inline-flex">
-          {letters.map((char, i) => (
-              <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: i % 2 === 0 ? 10 : -10, scale: 0.4, rotate: i % 2 === 0 ? -14 : 14 }}
-                  animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
-                  exit={{ opacity: 0, y: i % 2 === 0 ? -8 : 8, scale: 0.4, rotate: i % 2 === 0 ? 12 : -12 }}
-                  transition={{
-                      duration: 0.36,
-                      delay: i * 0.022,
-                      ease: [0.34, 1.56, 0.64, 1],
-                  }}
-                  className="inline-block"
-              >
-                  {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-          ))}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+        <span className="relative inline text-gradient-ember">
+            <AnimatePresence mode="wait">
+                <motion.span key={index} className="inline">
+                    {letters.map((char, i) => (
+                        <motion.span
+                            key={i}
+                            initial={{ opacity: 0, y: i % 2 === 0 ? 10 : -10, scale: 0.4, rotate: i % 2 === 0 ? -14 : 14 }}
+                            animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                            exit={{ opacity: 0, y: i % 2 === 0 ? -8 : 8, scale: 0.4, rotate: i % 2 === 0 ? 12 : -12 }}
+                            transition={{
+                                duration: 0.36,
+                                delay: i * 0.022,
+                                ease: [0.34, 1.56, 0.64, 1],
+                            }}
+                            className="inline-block"
+                        >
+                            {char === ' ' ? '\u00A0' : char}
+                        </motion.span>
+                    ))}
+                </motion.span>
+            </AnimatePresence>
+        </span>
     )
 }
 
@@ -140,10 +161,10 @@ export default function Hero() {
                         variants={itemVariants}
                         className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] max-w-3xl"
                     >
-                        <span className="block text-ink-900 dark:text-paper-50">{t('hero.titlePrefix')}</span>
-                        <span className="block mt-1">
-            <RewireWord words={rotatingWords} />
-          </span>
+                        <span className="block text-ink-900 dark:text-paper-50">
+                            {t('hero.titlePrefix')}{' '}
+                            <RewireWord words={rotatingWords} />
+                        </span>
                     </motion.h1>
 
                     <motion.p
@@ -157,7 +178,7 @@ export default function Hero() {
                         <CTA to="/contact">{t('hero.cta')}</CTA>
                     </motion.div>
 
-                    <motion.ol variants={itemVariants} className="flex flex-wrap items-center gap-2 sm:gap-3 pt-4 font-display text-xs sm:text-sm">
+                    <motion.ol variants={itemVariants} className="flex flex-nowrap items-center gap-1.5 sm:gap-3 pt-4 font-display text-[11px] sm:text-sm overflow-x-auto pb-1">
                         {steps.map((step, i) => (
                             <li key={step} className="flex items-center gap-2 sm:gap-3">
                                 {i > 0 && <span className="w-4 sm:w-6 h-px bg-ember-500/40" aria-hidden="true" />}
@@ -165,7 +186,7 @@ export default function Hero() {
                                     initial={{ opacity: 0, scale: 0.7 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.9 + i * 0.15, duration: 0.4 }}
-                                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-ember-500/25 text-ink-800 dark:text-paper-100"
+                                    className="flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-ember-500/25 text-ink-800 dark:text-paper-100 whitespace-nowrap"
                                 >
                                     <span className="w-1.5 h-1.5 rounded-full bg-ember-gradient shadow-[0_0_6px_rgba(255,122,26,0.8)]" />
                                     {step}

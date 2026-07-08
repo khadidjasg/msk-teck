@@ -21,10 +21,10 @@ const ICONS = [
 ]
 
 
-function TimelineItem({ item, index, meta, icon, isDark, isLast }) {
+function TimelineItem({ item, index, meta, icon, isDark, isLast, isRTL }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
-    const isLeft = index % 2 === 0
+    const isLeft = isRTL ? index % 2 === 1 : index % 2 === 0
 
     return (
         <div ref={ref} className="relative flex items-center w-full">
@@ -85,9 +85,9 @@ function TimelineItem({ item, index, meta, icon, isDark, isLast }) {
                     )}
                 </div>
 
-                <div className="flex md:hidden flex-1 ml-6">
+                <div className={`flex md:hidden flex-1 ${isRTL ? 'mr-6' : 'ml-6'}`}>
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: isRTL ? -30 : 30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                         className="group relative w-full max-w-sm"
@@ -153,12 +153,12 @@ function Card({ item, meta, icon, isDark, index }) {
 }
 
 
-function TimelineLine({ items, isDark }) {
+function TimelineLine({ items, isDark, isRTL }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: false, margin: '-200px' })
 
     return (
-        <div ref={ref} className="absolute left-5 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px]">
+        <div ref={ref} className={`absolute ${isRTL ? 'right-5 md:right-1/2 md:translate-x-px' : 'left-5 md:left-1/2 md:-translate-x-px'} top-0 bottom-0 w-[2px]`}>
             <div
                 className="absolute inset-0 w-full"
                 style={{
@@ -195,6 +195,7 @@ function TimelineLine({ items, isDark }) {
 export default function WhatYouGain() {
     const { t, i18n } = useTranslation()
     const [isDark, setIsDark] = useState(true)
+    const isRTL = i18n.language === 'ar'
 
     useEffect(() => {
         const html = document.documentElement
@@ -222,7 +223,6 @@ export default function WhatYouGain() {
     return (
         <section className="relative py-24 sm:py-32 overflow-hidden bg-paper-50 dark:bg-ink-950 transition-colors duration-500">
             <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export default function WhatYouGain() {
                 </motion.div>
 
                 <div className="relative">
-                    <TimelineLine items={items} isDark={isDark} />
+                    <TimelineLine items={items} isDark={isDark} isRTL={isRTL} />
 
                     <div className="relative flex flex-col gap-12 sm:gap-16 md:gap-20 py-4">
                         {items.map((item, i) => (
@@ -260,6 +260,7 @@ export default function WhatYouGain() {
                                 icon={ICONS[i % ICONS.length]}
                                 isDark={isDark}
                                 isLast={i === items.length - 1}
+                                isRTL={isRTL}
                             />
                         ))}
                     </div>

@@ -79,7 +79,7 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur-md bg-paper-50/80 dark:bg-ink-950/75">
-            <nav className="max-w-6xl mx-auto flex items-center justify-between gap-4 px-5 sm:px-8 h-16 lg:h-20">
+            <nav className="max-w-6xl mx-auto flex items-center justify-between gap-4 px-5 sm:px-8 h-14 lg:h-18">
                 <NavLink to="/" onClick={() => setOpen(false)} aria-label="MSK TECH — accueil" className="shrink-0">
                     <LogoPowerOn />
                 </NavLink>

@@ -19,8 +19,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Origines autorisées à appeler l'API (le frontend en local + en production).
-# ALLOWED_ORIGINS dans .env, séparées par des virgules.
 raw_origins = os.getenv(
     "ALLOWED_ORIGINS",
     "http://localhost:5173,http://127.0.0.1:5173",
@@ -43,10 +41,6 @@ def health_check():
 
 @app.post("/contact", response_model=ContactResponse, status_code=status.HTTP_200_OK)
 def submit_contact(contact: ContactCreate):
-    """
-    Reçoit un message du formulaire de contact et l'envoie par email
-    à MSK TECH, avec Reply-To réglé sur l'adresse de l'expéditeur.
-    """
     try:
         send_contact_email(contact)
     except EmailSendError as e:

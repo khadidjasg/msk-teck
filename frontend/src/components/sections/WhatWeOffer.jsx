@@ -278,71 +278,136 @@ export default function WhatWeOffer() {
                             const meta = DOMAIN_META[i % DOMAIN_META.length]
 
                             return (
-                                <motion.button
-                                    key={`${item.title}-${i}`}
-                                    type="button"
-                                    onClick={() => handleSelect(i)}
-                                    whileHover={{ x: isActive ? 0 : 4 }}
-                                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                    className="group relative flex items-center gap-3.5 w-full px-5 py-3.5 rounded-xl text-left transition-all duration-400 overflow-hidden"
-                                    style={{
-                                        border: isActive ? `1px solid ${meta.color}50` : '1px solid transparent',
-                                        background: isActive ? `${meta.color}15` : 'transparent',
-                                        boxShadow: isActive ? `0 0 30px ${meta.color}15, inset 0 1px 0 ${isDark ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.5)'}` : 'none',
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        if (!isActive) {
-                                            e.currentTarget.style.background = isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)'
-                                            e.currentTarget.style.borderColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'
-                                        }
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        if (!isActive) {
-                                            e.currentTarget.style.background = 'transparent'
-                                            e.currentTarget.style.borderColor = 'transparent'
-                                        }
-                                    }}
-                                >
-                                    {isActive && (
+                                <div key={`${item.title}-${i}`} className="flex flex-col">
+                                    <motion.button
+                                        type="button"
+                                        onClick={() => handleSelect(i)}
+                                        whileHover={{ x: isActive ? 0 : 4 }}
+                                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                        className="group relative flex items-center gap-3.5 w-full px-5 py-3.5 rounded-xl text-left transition-all duration-400 overflow-hidden"
+                                        style={{
+                                            border: isActive ? `1px solid ${meta.color}50` : '1px solid transparent',
+                                            background: isActive ? `${meta.color}15` : 'transparent',
+                                            boxShadow: isActive ? `0 0 30px ${meta.color}15, inset 0 1px 0 ${isDark ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.5)'}` : 'none',
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            if (!isActive) {
+                                                e.currentTarget.style.background = isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)'
+                                                e.currentTarget.style.borderColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'
+                                            }
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (!isActive) {
+                                                e.currentTarget.style.background = 'transparent'
+                                                e.currentTarget.style.borderColor = 'transparent'
+                                            }
+                                        }}
+                                    >
+                                        {isActive && (
+                                            <span
+                                                className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-7 rounded-r-full"
+                                                style={{
+                                                    background: meta.color,
+                                                    boxShadow: `0 0 12px ${meta.color}, 0 0 24px ${meta.color}60`,
+                                                }}
+                                            />
+                                        )}
+
                                         <span
-                                            className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-7 rounded-r-full"
+                                            className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-400"
                                             style={{
-                                                background: meta.color,
-                                                boxShadow: `0 0 12px ${meta.color}, 0 0 24px ${meta.color}60`,
+                                                background: isActive ? meta.color : (isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'),
+                                                boxShadow: isActive ? `0 0 20px ${meta.color}50, 0 0 40px ${meta.color}20` : 'none',
                                             }}
-                                        />
-                                    )}
-
-                                    <span
-                                        className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-400"
-                                        style={{
-                                            background: isActive ? meta.color : (isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'),
-                                            boxShadow: isActive ? `0 0 20px ${meta.color}50, 0 0 40px ${meta.color}20` : 'none',
-                                        }}
-                                    >
-                                        <span className={isActive ? 'text-white' : (isDark ? 'text-paper-100/40' : 'text-ink-900/40')}>
-                                            {meta.icon}
+                                        >
+                                            <span className={isActive ? 'text-white' : (isDark ? 'text-paper-100/40' : 'text-ink-900/40')}>
+                                                {meta.icon}
+                                            </span>
                                         </span>
-                                    </span>
 
-                                    <span
-                                        className="font-display text-[15px] transition-all duration-400"
-                                        style={{
-                                            fontWeight: isActive ? 600 : 400,
-                                            color: isActive
-                                                ? (isDark ? '#fff' : '#0A0A0B')
-                                                : (isDark ? 'rgba(255,255,255,0.5)' : 'rgba(10,10,11,0.5)'),
-                                            letterSpacing: '0.3px',
-                                        }}
-                                    >
-                                        {item.title}
-                                    </span>
-                                </motion.button>
+                                        <span
+                                            className="font-display text-[15px] transition-all duration-400"
+                                            style={{
+                                                fontWeight: isActive ? 600 : 400,
+                                                color: isActive
+                                                    ? (isDark ? '#fff' : '#0A0A0B')
+                                                    : (isDark ? 'rgba(255,255,255,0.5)' : 'rgba(10,10,11,0.5)'),
+                                                letterSpacing: '0.3px',
+                                            }}
+                                        >
+                                            {item.title}
+                                        </span>
+                                    </motion.button>
+
+                                    {isActive && (
+                                        <div className="lg:hidden w-full mt-2 mb-4">
+                                            <div
+                                                className="relative z-10 p-6 rounded-2xl overflow-hidden"
+                                                style={{
+                                                    border: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(10,10,11,0.08)'}`,
+                                                    background: isDark ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.7)',
+                                                    backdropFilter: 'blur(24px) saturate(1.3)',
+                                                }}
+                                            >
+                                                <AnimatePresence mode="wait">
+                                                    <motion.div
+                                                        key={active}
+                                                        initial={{ opacity: 0, y: 12 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: -12 }}
+                                                        transition={{ duration: 0.35, ease: 'easeOut' }}
+                                                    >
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <span
+                                                                className="w-2.5 h-2.5 rounded-full"
+                                                                style={{
+                                                                    background: activeMeta.color,
+                                                                    boxShadow: `0 0 16px ${activeMeta.color}, 0 0 32px ${activeMeta.color}50`,
+                                                                }}
+                                                            />
+                                                            <span className="text-[11px] uppercase tracking-[0.2em] text-ink-800/40 dark:text-paper-100/35 font-medium">
+                                                                {active + 1} / {items.length}
+                                                            </span>
+                                                        </div>
+
+                                                        <h3
+                                                            className="font-display text-xl sm:text-2xl font-bold mb-4"
+                                                            style={{
+                                                                color: isDark ? '#fff' : '#0A0A0B',
+                                                                letterSpacing: '-0.3px',
+                                                            }}
+                                                        >
+                                                            {activeItem.title}
+                                                        </h3>
+
+                                                        <p
+                                                            className="text-[15px] leading-[1.75] font-body"
+                                                            style={{
+                                                                color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(10,10,11,0.7)',
+                                                            }}
+                                                        >
+                                                            {activeItem.description}
+                                                        </p>
+
+                                                        <div className="mt-5 flex items-center gap-2">
+                                                            <div
+                                                                className="h-0.5 rounded-full flex-1 max-w-[140px]"
+                                                                style={{
+                                                                    background: `linear-gradient(90deg, ${activeMeta.color} 0%, transparent 100%)`,
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </motion.div>
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             )
                         })}
                     </div>
 
-                    <div className="flex-1 w-full lg:w-auto relative min-h-[300px] flex flex-col justify-center">
+                    <div className="hidden lg:flex flex-1 w-full lg:w-auto relative min-h-[300px] flex-col justify-center">
                         <div
                             className="absolute -inset-6 rounded-[24px] pointer-events-none transition-all duration-1000"
                             style={{

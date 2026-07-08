@@ -9,7 +9,6 @@ import {
     ShieldCheck,
     Palette,
     ArrowUpRight,
-    ImagePlus,
     Loader2,
     FolderOpen,
     AlertCircle,
@@ -126,7 +125,7 @@ function ProjectCard({ project, index, count }) {
         >
             <Link
                 to={`/our-work/${project.slug}`}
-                className="relative flex flex-col h-full min-h-[240px] rounded-2xl overflow-hidden bg-ink-900/50"
+                className="relative flex flex-col h-full min-h-[200px] sm:min-h-[240px] rounded-2xl overflow-hidden bg-ink-900/50"
             >
                 <div className="absolute inset-0">
                     <ProjectImage src={project.cover_image_url} gradient={gradient} Icon={Icon} />
@@ -137,7 +136,7 @@ function ProjectCard({ project, index, count }) {
                     />
                 </div>
 
-                <div className="relative mt-auto p-5 sm:p-6 flex flex-col gap-3 z-10">
+                <div className="relative mt-auto p-4 sm:p-6 flex flex-col gap-2 sm:gap-3 z-10">
                     <motion.span
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -161,7 +160,7 @@ function ProjectCard({ project, index, count }) {
                         {techList.slice(0, 4).map((tech) => (
                             <span
                                 key={tech}
-                                className="text-[10px] sm:text-[11px] px-2 py-0.5 rounded-md bg-white/10 text-white/70 backdrop-blur-sm border border-white/5"
+                                className="text-[10px] px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-white/70 backdrop-blur-sm border border-white/5"
                             >
                                 {tech}
                             </span>
@@ -317,8 +316,15 @@ export default function OurWork() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background: `
-                        radial-gradient(circle at 80% 10%, rgba(255,145,66,0.12), transparent 45%),
-                        radial-gradient(circle at 20% 80%, rgba(230,51,18,0.08), transparent 45%)
+                        linear-gradient(180deg, 
+                            rgba(255, 145, 66, 0.03) 0%, 
+                            transparent 30%, 
+                            rgba(230, 51, 18, 0.02) 70%, 
+                            transparent 100%
+                        ),
+                        radial-gradient(circle at 85% 5%, rgba(255, 145, 66, 0.18), transparent 50%),
+                        radial-gradient(circle at 15% 85%, rgba(230, 51, 18, 0.12), transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 145, 66, 0.04), transparent 60%)
                     `,
                 }}
             />
@@ -409,7 +415,7 @@ export default function OurWork() {
                         <motion.div
                             key="grid"
                             layout
-                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[220px] sm:auto-rows-[240px] gap-4 sm:gap-5"
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[280px] sm:auto-rows-[240px] gap-5 sm:gap-5"
                         >
                             <AnimatePresence mode="popLayout">
                                 {filtered.map((project, i) => (

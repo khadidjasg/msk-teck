@@ -7,15 +7,12 @@ from .schemas import ContactCreate
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 NOTIFY_EMAIL = os.getenv("NOTIFY_EMAIL", "msk.tech2500@gmail.com")
 
-# Expéditeur par défaut de Resend tant qu'aucun domaine personnalisé n'est vérifié.
-# Fonctionne sans configuration, mais ne peut envoyer que vers l'email du compte Resend.
 SENDER = "MSK TECH <onboarding@resend.dev>"
 
 RESEND_URL = "https://api.resend.com/emails"
 
 
 class EmailSendError(Exception):
-    """Levée quand l'envoi de l'email échoue."""
     pass
 
 

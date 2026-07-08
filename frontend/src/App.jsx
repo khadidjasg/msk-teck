@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { RTL_LANGUAGES } from './i18n/i18n.js';
 import Layout from './components/layout/Layout.jsx';
@@ -9,6 +9,16 @@ import OurWork from './pages/OurWork.jsx';
 import ProjectDetail from './pages/ProjectDetail.jsx';
 import OurTeam from './pages/OurTeam.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
     const { i18n } = useTranslation();
@@ -21,6 +31,7 @@ function App() {
 
     return (
         <Layout>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/our-work" element={<OurWork />} />

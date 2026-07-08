@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Mail, Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import { socialLinks } from '../data/socialLinks.js'
 
-/** Champ à soulignement animé — pas de boîte, juste une ligne qui s'illumine au focus */
 function Field({ id, label, type = 'text', textarea, value, onChange, error }) {
     const commonProps = {
         id,
@@ -47,7 +46,6 @@ function Field({ id, label, type = 'text', textarea, value, onChange, error }) {
     )
 }
 
-/** Bouton réseau social — neutre au repos, le dégradé de marque n'apparaît qu'au survol */
 function SocialButton({ href, label, icon: Icon, gradient, delay }) {
     const isExternal = href.startsWith('http')
 
@@ -65,13 +63,12 @@ function SocialButton({ href, label, icon: Icon, gradient, delay }) {
             whileTap={{ scale: 0.95 }}
             className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border border-ink-800/12 dark:border-paper-100/12 overflow-hidden"
         >
-            {/* couche colorée — cachée au repos, révélée au survol */}
             <span
                 aria-hidden="true"
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: gradient }}
             />
-            {/* halo qui déborde légèrement au survol, pour un vrai effet "wow" sans être bruyant au repos */}
+
             <span
                 aria-hidden="true"
                 className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-60 blur-md transition-opacity duration-300"
@@ -92,7 +89,7 @@ export default function ContactUs() {
     const { t } = useTranslation()
     const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '', company: '' })
     const [errors, setErrors] = useState({})
-    const [status, setStatus] = useState('idle') // idle | loading | success | error
+    const [status, setStatus] = useState('idle')
 
     const handleChange = (e) => {
         setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
@@ -109,7 +106,7 @@ export default function ContactUs() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if (form.company) return // honeypot anti-spam, silencieux
+        if (form.company) return
 
         const errs = validate()
         setErrors(errs)
@@ -149,7 +146,6 @@ export default function ContactUs() {
 
     return (
         <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-paper-50 dark:bg-ink-950">
-            {/* halo de couleur permanent, cohérent avec le reste du site */}
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -159,7 +155,6 @@ export default function ContactUs() {
             />
 
             <div className="relative max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
-                {/* colonne info */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -197,7 +192,6 @@ export default function ContactUs() {
                         {t('contact.responseNote')}
                     </p>
 
-                    {/* réseaux sociaux — source unique : src/data/socialLinks.js */}
                     <div className="flex items-center gap-3 pl-0.5">
                         {socialLinks.map((social, i) => (
                             <SocialButton
@@ -216,7 +210,6 @@ export default function ContactUs() {
                     </div>
                 </motion.div>
 
-                {/* colonne formulaire */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -224,7 +217,6 @@ export default function ContactUs() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                 >
                     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7">
-                        {/* honeypot — invisible pour les humains, piège les bots */}
                         <input
                             type="text"
                             name="company"

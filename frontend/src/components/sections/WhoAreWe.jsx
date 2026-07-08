@@ -6,9 +6,10 @@ import { BookOpen, Wrench, Hammer } from 'lucide-react'
 const ICONS = [BookOpen, Wrench, Hammer]
 
 export default function WhoAreWe() {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
     const pillars = t('whoAreWe.pillars', { returnObjects: true })
     const sectionRef = useRef(null)
+    const isRTL = i18n.language === 'ar'
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -41,16 +42,18 @@ export default function WhoAreWe() {
                     </p>
                 </motion.div>
 
-                <div className="relative pl-9 sm:pl-0">
-                    <div className="absolute left-[7px] sm:left-1/2 top-0 bottom-0 w-px bg-ink-800/10 dark:bg-paper-100/10 sm:-translate-x-1/2" />
+                <div className={`relative ${isRTL ? 'pr-9 sm:pr-0' : 'pl-9 sm:pl-0'}`}>
+                    <div className={`absolute ${isRTL ? 'right-[7px] sm:right-1/2' : 'left-[7px] sm:left-1/2'} top-0 bottom-0 w-px bg-ink-800/10 dark:bg-paper-100/10 sm:-translate-x-1/2`} />
+
                     <motion.div
                         style={{ scaleY: scrollYProgress }}
-                        className="absolute left-[7px] sm:left-1/2 top-0 bottom-0 w-px bg-ember-gradient origin-top sm:-translate-x-1/2"
+                        className={`absolute ${isRTL ? 'right-[7px] sm:right-1/2' : 'left-[7px] sm:left-1/2'} top-0 bottom-0 w-px bg-ember-gradient origin-top sm:-translate-x-1/2`}
                     />
+
                     <motion.div
                         aria-hidden="true"
                         style={{ top: useTransform(scrollYProgress, [0, 1], ['0%', '100%']) }}
-                        className="absolute left-[7px] sm:left-1/2 w-2.5 h-2.5 rounded-full bg-paper-50 dark:bg-ink-950 sm:-translate-x-1/2 -translate-y-1/2"
+                        className={`absolute ${isRTL ? 'right-[7px] sm:right-1/2' : 'left-[7px] sm:left-1/2'} w-2.5 h-2.5 rounded-full bg-paper-50 dark:bg-ink-950 sm:-translate-x-1/2 -translate-y-1/2`}
                     >
                         <span className="absolute inset-0 rounded-full bg-ember-gradient shadow-[0_0_10px_3px_rgba(255,122,26,0.75)]" />
                     </motion.div>
@@ -58,7 +61,7 @@ export default function WhoAreWe() {
                     <div className="flex flex-col gap-16 sm:gap-8">
                         {pillars.map((pillar, i) => {
                             const Icon = ICONS[i % ICONS.length]
-                            const reverse = i % 2 === 1
+                            const reverse = isRTL ? i % 2 === 0 : i % 2 === 1
                             return (
                                 <motion.div
                                     key={pillar.title}
